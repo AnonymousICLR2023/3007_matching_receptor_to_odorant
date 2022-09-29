@@ -1,0 +1,45 @@
+CASE: GNN
+ACTION: predict
+# ----- Model config -----:
+# MODEL_NAME: VanillaMPNN
+NUM_CLASSES: 178
+ATOM_FEATURES:
+  - AtomicNum
+  - ChiralTag
+  - Hybridization
+  - FormalCharge
+  - NumImplicitHs
+  - ExplicitValence
+  - Mass
+  - IsAromatic
+BOND_FEATURES:
+  - BondType
+  - IsAromatic
+RESTORE_FILE: <path_to_checkpoint>.pkl
+# ----- Run config -----:
+BATCH_SIZE: 700
+LOADER_OUTPUT_TYPE: jax
+N_PARTITIONS: 0
+PADDING_N_EDGE: 265
+PADDING_N_NODE: 128
+RETURN_INTERMEDIATES: false
+# ----- Train config -----:
+LEARNING_RATE: 0.001
+LOG_IMAGES_FREQUENCY: 50
+LOSS_OPTION: cross_entropy
+N_EPOCH: null
+OPTIMIZATION:
+  OPTION: adamw_polynomial
+SAVE_FREQUENCY: 100
+# ----- Logging config -----:
+LOGGING_PARENT_DIR: /mnt/Rec2Odorant/odor_description/multiLabel/GNN/Prediction/embedding
+# ----- Data config -----:
+TRAIN_CSV_NAME: .csv
+VALID_CSV_NAME: .csv
+PREDICT_CSV_NAME: <path_to_csv_with_molecules_to_embed>.csv
+# DATACASE: <subdirectory_in_DATA_PARENT_DIR>
+DATA_PARENT_DIR: /mnt/Rec2Odorant/odor_description/multiLabel/GNN/Data
+LABEL_COL: null
+MOL_COL: _SMILES
+VALID_WEIGHT_COL: null
+WEIGHT_COL: Weight

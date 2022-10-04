@@ -5,7 +5,7 @@ from Rec2Odorant.odor_description.multiLabel.GNN.datasets.pyrfume.preprocess imp
 from Rec2Odorant.odor_description.multiLabel.GNN.datasets.pyrfume.split import *
 
 if __name__ == '__main__':
-    cv_working_dir = os.path.join('odor_description','multiLabel', 'GNN', 'Data', 'Test')
+    cv_working_dir = os.path.join('odor_description','multiLabel', 'GNN', 'Data')
     cv_prepro = Pyrfume_PreProcess(base_working_dir = os.path.join('odor_description','multiLabel', 'GNN', 'Data'), data_path=None)
     cv_prepro.CV_data()
 

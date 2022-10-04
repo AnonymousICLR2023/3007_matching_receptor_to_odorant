@@ -71,4 +71,4 @@ From: nvidia/cuda:11.2.0-cudnn8-runtime-ubuntu18.04
     pip install tensorflow==2.8.0
 
     
-    pip install git+https://github.com/AnonymousICLR2023/3007_matching_receptor_to_odorant.git
+    # pip install git+https://github.com/AnonymousICLR2023/3007_matching_receptor_to_odorant.git

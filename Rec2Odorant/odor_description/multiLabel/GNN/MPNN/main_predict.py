@@ -17,42 +17,9 @@ from Rec2Odorant.odor_description.multiLabel.GNN.MPNN.make_create_optimizer impo
 from Rec2Odorant.odor_description.multiLabel.GNN.MPNN.make_predict import make_predict_epoch
 import logging
 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0"
+def main_predict(hparams):    
+    logdir = os.path.join(hparams['LOGGING_PARENT_DIR'])
 
-# if __name__ == '__main__':
-def main_predict(hparams):
-    # hparams = {
-    #         'BATCH_SIZE' : 400,
-    #         'N_EPOCH' : None,
-    #         'LEARNING_RATE' : 0.001,
-    #         'SAVE_FREQUENCY' : None,
-    #         'LOSS_OPTION' : 'cross entropy',
-    #         'DATACASE' : os.path.join('pyrfume_base_20220908-114642','random_data','20220908-115036'),
-    #         'TRAIN' : None,
-    #         # 'DATA_CSV_PREDICT' : '/home/matej/Documents/repos/MatejHl/Receptor_odorant/Receptor_odorant/JAX/BERT_GNN/Predictions/Combinatorial_code/2022_06_27_GoodScent/Data/all_20220630-142906/test_only/20220630-143250/mix__racemic/mols.csv',
-    #         'DATA_CSV_PREDICT' : '/home/matej/Documents/repos/MatejHl/Receptor_odorant/Receptor_odorant/JAX/BERT_GNN/Predictions/Combinatorial_code/2022_09_09_Pyrfume/Data/all_20220909-164549/test_only/20220909-165117/mix__racemic/mols.csv',
-    #         'mol_col' : '_SMILES',
-    #         'label_col' : None,
-    #         'weight_col' : None,
-    #         'valid_weight_col' : None,
-    #         'loader_output_type' : 'jax',
-    #         'num_classes' : 178,
-    #         'n_node_features': ('AtomicNum', 'ChiralTag', 'Hybridization', 'FormalCharge', 
-    #                         'NumImplicitHs', 'ExplicitValence', 'Mass', 'IsAromatic'),
-    #         'n_edge_features' : ('BondType', 'IsAromatic'),
-    #         'node_padding' : 128,
-    #         'edge_padding' : 256
-    #         }
-
-    # datadir = os.path.join('/mnt','Custom_Flax_code','JAX','multiClass', 'GNN_comb', 'Data', hparams['DATACASE'])
-    # datadir = os.path.join('/mnt','Rec2Odorant','odor_description','multiLabel','GNN','Data', hparams['DATACASE'])
-    # logdir = os.path.join('/mnt','Rec2Odorant','odor_description','multiLabel','GNN','logs', hparams['DATACASE'])
-
-    datadir = os.path.join(hparams['DATA_PARENT_DIR'], hparams['DATACASE'])
-    logdir = os.path.join(hparams['LOGGING_PARENT_DIR'], hparams['DATACASE'])
-
-    # restore_file = None
-    # restore_file = os.path.join(logdir, 'VanillaMPNN', '20220908-145409', 'ckpts', 'state_e400.pkl')
     restore_file = hparams['RESTORE_FILE']
 
     model = VanillaMPNN(num_classes = hparams['NUM_CLASSES'], atom_features = hparams['ATOM_FEATURES'], bond_features = hparams['BOND_FEATURES'])

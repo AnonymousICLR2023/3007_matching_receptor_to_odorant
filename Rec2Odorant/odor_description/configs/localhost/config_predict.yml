@@ -36,9 +36,9 @@ LOGGING_PARENT_DIR: /mnt/Rec2Odorant/odor_description/multiLabel/GNN/Prediction/
 # ----- Data config -----:
 TRAIN_CSV_NAME: .csv
 VALID_CSV_NAME: .csv
-PREDICT_CSV_NAME: <path_to_csv_with_molecules_to_embed>.csv
+PREDICT_CSV_NAME: /mnt/Rec2Odorant/figures/Data/pyrfume_embedding_2022_09_08_source.csv
 # DATACASE: <subdirectory_in_DATA_PARENT_DIR>
-DATA_PARENT_DIR: /mnt/Rec2Odorant/odor_description/multiLabel/GNN/Data
+# DATA_PARENT_DIR: /mnt/Rec2Odorant/odor_description/multiLabel/GNN/Data
 LABEL_COL: null
 MOL_COL: _SMILES
 VALID_WEIGHT_COL: null

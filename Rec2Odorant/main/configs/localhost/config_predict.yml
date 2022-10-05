@@ -48,13 +48,13 @@ BIG_TRAIN_CSV_NAME: .csv
 BIG_VALID_CSV_NAME: .csv
 SIZE_CUT_DIRNAME: null
 # ----- Logging config -----:
-LOGGING_PARENT_DIR: <path_to_directiry_ro_save_predictions>
+LOGGING_PARENT_DIR: <path_to_directiry_to_save_predictions>
 # ----- Data config -----:
 TRAIN_CSV_NAME: .csv
 VALID_CSV_NAME: .csv
 PREDICT_CSV_NAME: data_test.csv
 BERT_H5FILE: /mnt/Rec2Odorant/main/CLS_GNN_MHA/Data/chemosimdb/<path_to_precomputed_BERT>.h5
-DATACASE: chemosimdb/<folder_with_data_csvs>
+DATACASE: db/<folder_with_data_csvs>
 DATA_PARENT_DIR: /mnt/Rec2Odorant/main/CLS_GNN_MHA/Data
 LABEL_COL: Responsive
 MOL_COL: _SMILES

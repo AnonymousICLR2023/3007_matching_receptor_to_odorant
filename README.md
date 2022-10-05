@@ -41,7 +41,7 @@ jupyter-notebook .
 
 Main model:
 -----------
-There is a Singularity container prepared in `_container` with the environment to run the model. Singularity 3.7.0 and ,,,, was tested.
+There is a Singularity container prepared in `_container` with the environment to run the model. Singularity 3.7.0 and 3.8.0 was tested.
 The container needs to be build from \_container/Rec2Odorant_singularity.def by running
 
 ```
@@ -80,7 +80,7 @@ python main/datasets/db.py
 
 Precompute protBERT [CLS] embedding:
 ```
-python main/scripts/main_precompute.py --data_file=/mnt/Rec2Odorant/main/CLS_GNN_MHA/Data/db/<path_to_folder_containing_seqs_csv>/seqs.csv.csv --save_dir=/mnt/Rec2Odorant/main/CLS_GNN_MHA/Data/db/<path_to_folder_containing_seqs_csv> --cuda_device=0
+python main/scripts/main_precompute.py --data_file=/mnt/Rec2Odorant/main/CLS_GNN_MHA/Data/db/<path_to_folder_containing_seqs_csv>/seqs.csv --save_dir=/mnt/Rec2Odorant/main/CLS_GNN_MHA/Data/db/<path_to_folder_containing_seqs_csv> --cuda_device=0
 ```
 
 Run the model:

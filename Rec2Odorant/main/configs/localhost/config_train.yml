@@ -53,8 +53,8 @@ LOGGING_PARENT_DIR: <path_to_directiry_ro_save_checkpoints>
 TRAIN_CSV_NAME: data_train_node32_edge64.csv
 VALID_CSV_NAME: data_valid_node32_edge64.csv
 PREDICT_CSV_NAME: .csv
-BERT_H5FILE: /mnt/Rec2Odorant/main/CLS_GNN_MHA/Data/chemosimdb/<path_to_precomputed_BERT>.h5
-DATACASE: chemosimdb/<folder_with_data_csvs>
+BERT_H5FILE: /mnt/Rec2Odorant/main/CLS_GNN_MHA/Data/db/<path_to_precomputed_BERT>.h5
+DATACASE: db/<folder_with_data_csvs>
 DATA_PARENT_DIR: /mnt/Rec2Odorant/main/CLS_GNN_MHA/Data
 LABEL_COL: Responsive
 MOL_COL: _SMILES

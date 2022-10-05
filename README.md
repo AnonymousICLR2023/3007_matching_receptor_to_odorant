@@ -52,8 +52,11 @@ sudo singularity build Rec2Odorant_singularity.sif Rec2Odorant_singularity.def
 This will create container `Rec2Odorant_singularity.sif` with all the python libraries installed.
 
 ### Start interactive session:
+Huggingface needs a cache directory to download protBERT, but since the container doesn't allow writing after its creation, the default cache directory will be created in the host before starting the container. This directory is then mounted to the container.
 ```
-singularity exec --containall --nv -B <path_to_repo_3007_matching_receptor_to_odorant>:/mnt,<HOME>/.cache/huggingface/transformers,<other_folders_in_host_if_needed>:<other_folders_in_container> Rec2Odorant_singularity.sif bash
+mkdir -p <$HOME>/.cache/huggingface/transformers
+
+singularity exec --containall --nv -B <path_to_repo_3007_matching_receptor_to_odorant>:/mnt,<$HOME>/.cache/huggingface/transformers,<other_folders_in_host_if_needed>:<other_folders_in_container> Rec2Odorant_singularity.sif bash
 ```
 Inside the container run the following to be able to use conda and fix potential problem with cuda inside the container
 ```
